@@ -3,26 +3,26 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
-      "users",
+      "favourites",
       [
         {
-          name: "Apple",
-          email: "apple@apple.com",
-          password: "apple",
+          resolvedAddress: "Amsterdam, Noord-Holland, Nederland",
+          displayName: "Amsterdam",
+          userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Banana",
-          email: "banana@banana.com",
-          password: "banana",
+          resolvedAddress: "Cape Town, Western Cape, South Africa",
+          displayName: "Cape Town",
+          userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Coco",
-          email: "coco@coco.com",
-          password: "coco",
+          resolvedAddress: "Tokyo, Japan",
+          displayName: "Tokyo",
+          userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -32,6 +32,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete("users", null, {});
+    await queryInterface.bulkDelete("favourites", null, {});
   },
 };
